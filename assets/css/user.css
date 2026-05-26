@@ -1,0 +1,1027 @@
+/* ============================================
+   用户系统样式
+   登录注册、用户中心、会员购买
+   ============================================ */
+
+/* --- 第三方登录 --- */
+.vdp-social-login {
+    margin-top: 24px;
+    text-align: center;
+}
+.vdp-social-separator {
+    position: relative;
+    margin: 16px 0;
+    font-size: 12px;
+    color: var(--muted-color, #999);
+}
+.vdp-social-separator::before,
+.vdp-social-separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 1px;
+    background: var(--border-color, #eee);
+}
+.vdp-social-separator::before { left: 0; }
+.vdp-social-separator::after  { right: 0; }
+.vdp-social-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.vdp-social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: var(--transition, all .3s);
+}
+.vdp-social-btn:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 2px 12px rgba(0,0,0,.12));
+    text-decoration: none;
+}
+
+/* --- 表单基础 --- */
+.vdp-form .vdp-form-row {
+    margin-bottom: 16px;
+}
+.vdp-form .vdp-form-row label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--secondary-color, #555);
+    font-weight: 500;
+}
+.vdp-form .vdp-form-row label .required {
+    color: var(--danger-color, #F44336);
+}
+.vdp-form .vdp-form-row input[type=text],
+.vdp-form .vdp-form-row input[type=email],
+.vdp-form .vdp-form-row input[type=password],
+.vdp-form .vdp-form-row textarea,
+.vdp-form .vdp-form-row select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color, #eee);
+    border-radius: var(--radius-sm, 4px);
+    font-size: 14px;
+    transition: var(--transition, all .3s);
+    box-sizing: border-box;
+}
+.vdp-form .vdp-form-row input:focus,
+.vdp-form .vdp-form-row textarea:focus,
+.vdp-form .vdp-form-row select:focus {
+    outline: none;
+    border-color: var(--theme-color, #2196F3);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, .1);
+}
+.vdp-form .vdp-form-row input:disabled {
+    background: #f5f5f5;
+    color: #999;
+}
+.vdp-form-hint {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--muted-color, #999);
+}
+.vdp-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* --- 按钮 --- */
+.vdp-btn-primary {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--theme-color, #2196F3);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm, 4px);
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition, all .3s);
+    text-decoration: none;
+}
+.vdp-btn-primary:hover {
+    background: var(--theme-color-hover, #1976D2);
+    color: #fff;
+    text-decoration: none;
+}
+.vdp-btn-primary:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+.vdp-btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* --- 登录/注册页面 --- */
+.vdp-auth-page {
+    margin-top: 60px;
+}
+.vdp-auth-box {
+    background: #fff;
+    border-radius: var(--main-radius, 8px);
+    box-shadow: var(--shadow-md, 0 2px 12px rgba(0,0,0,.08));
+    padding: 32px;
+}
+.vdp-auth-tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color, #eee);
+}
+.vdp-auth-tabs a {
+    padding: 12px 0;
+    font-size: 16px;
+    color: var(--muted-color, #999);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+}
+.vdp-auth-tabs a.active {
+    color: var(--theme-color, #2196F3);
+    border-bottom-color: var(--theme-color, #2196F3);
+    font-weight: 600;
+}
+
+/* --- 用户中心 --- */
+.vdp-user-center {
+    padding: 0 15px;
+}
+.vdp-user-card {
+    background: #fff;
+    border-radius: var(--main-radius, 8px);
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,.06));
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.vdp-user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--theme-color-light, #E3F2FD);
+}
+.vdp-user-name {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--main-color, #333);
+}
+.vdp-user-vip {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted-color, #999);
+}
+.vdp-vip-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #f39c12;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+.vdp-vip-expires {
+    color: var(--muted-color, #999);
+    font-size: 12px;
+}
+.vdp-btn-vip {
+    display: inline-block;
+    padding: 6px 14px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    color: #fff;
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 12px;
+}
+.vdp-btn-vip:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: .9;
+}
+
+/* 用户中心菜单 */
+.vdp-user-menu {
+    background: #fff;
+    border-radius: var(--main-radius, 8px);
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,.06));
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+}
+.vdp-user-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    color: var(--secondary-color, #555);
+    text-decoration: none;
+    transition: var(--transition, all .3s);
+}
+.vdp-user-menu li a:hover {
+    background: var(--theme-color-light, #E3F2FD);
+    color: var(--theme-color, #2196F3);
+}
+.vdp-user-menu li.active a {
+    background: var(--theme-color, #2196F3);
+    color: #fff;
+}
+
+/* 用户中心内容区 */
+.vdp-user-content {
+    background: #fff;
+    border-radius: var(--main-radius, 8px);
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,.06));
+    padding: 24px;
+    min-height: 400px;
+}
+.vdp-panel-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color, #eee);
+    font-size: 18px;
+}
+.vdp-empty {
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--muted-color, #999);
+}
+
+/* 表格 */
+.vdp-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.vdp-table th,
+.vdp-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color, #eee);
+    font-size: 14px;
+}
+.vdp-table th {
+    background: #fafafa;
+    font-weight: 600;
+    color: var(--secondary-color, #555);
+}
+
+/* 文档列表项 */
+.vdp-doc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.vdp-doc-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color, #eee);
+}
+.vdp-doc-title {
+    flex: 1;
+    color: var(--main-color, #333);
+    text-decoration: none;
+}
+.vdp-doc-title:hover {
+    color: var(--theme-color, #2196F3);
+}
+.vdp-doc-meta {
+    font-size: 12px;
+    color: var(--muted-color, #999);
+}
+
+/* VIP 提示框 */
+.vdp-vip-tip {
+    padding: 12px 16px;
+    background: linear-gradient(90deg, #fff3cd, #ffe69c);
+    border-left: 4px solid #f39c12;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* VIP 状态卡片 */
+.vdp-vip-status {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff3cd, #ffe69c);
+    border-radius: var(--main-radius, 8px);
+    margin-bottom: 24px;
+}
+.vdp-vip-level {
+    font-size: 18px;
+    font-weight: 600;
+    color: #856404;
+}
+.vdp-vip-end {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #856404;
+}
+.vdp-vip-days {
+    color: #d35400;
+}
+.vdp-vip-empty {
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    color: var(--muted-color, #999);
+    margin-bottom: 24px;
+}
+
+/* VIP 套餐卡片 */
+.vdp-vip-products h3 {
+    margin: 24px 0 16px;
+    font-size: 16px;
+}
+.vdp-vip-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+.vdp-vip-card {
+    padding: 24px 20px;
+    border: 2px solid var(--border-color, #eee);
+    border-radius: var(--main-radius, 8px);
+    text-align: center;
+    transition: var(--transition, all .3s);
+}
+.vdp-vip-card:hover {
+    border-color: var(--theme-color, #2196F3);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 2px 12px rgba(0,0,0,.08));
+}
+.vdp-vip-card-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+.vdp-vip-card-price {
+    margin: 12px 0;
+    font-size: 28px;
+    color: var(--danger-color, #F44336);
+    font-weight: 700;
+}
+.vdp-vip-card-desc {
+    color: var(--muted-color, #999);
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+.vdp-btn-buy-vip {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.vdp-btn-buy-vip:hover {
+    opacity: .9;
+}
+
+/* VIP 特权 */
+.vdp-vip-rights {
+    margin-top: 32px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: var(--main-radius, 8px);
+}
+.vdp-vip-rights h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+.vdp-vip-rights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.vdp-vip-rights ul li {
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+/* 支付弹窗 */
+.vdp-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vdp-modal-box {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--main-radius, 8px);
+    text-align: center;
+    max-width: 320px;
+    position: relative;
+}
+.vdp-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--muted-color, #999);
+}
+.vdp-pay-amount {
+    font-size: 24px;
+    color: var(--danger-color, #F44336);
+    font-weight: 700;
+    margin: 12px 0;
+}
+.vdp-pay-tip {
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--muted-color, #999);
+}
+#vdp-pay-status {
+    color: var(--theme-color, #2196F3);
+    font-size: 14px;
+}
+
+/* Flash 消息 */
+.vdp-flash {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg, 0 4px 24px rgba(0,0,0,.12));
+    z-index: 10000;
+    opacity: 0;
+    transition: all .3s ease;
+    font-size: 14px;
+}
+.vdp-flash-show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+.vdp-flash-success { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+.vdp-flash-error   { background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545; }
+.vdp-flash-info    { background: #d1ecf1; color: #0c5460; border-left: 4px solid #17a2b8; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .vdp-user-center .col-md-3,
+    .vdp-user-center .col-md-9 {
+        margin-bottom: 16px;
+    }
+    .vdp-vip-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   小工具样式
+   ============================================ */
+
+/* 通用 widget 容器 */
+.vdp-widget {
+    background: #fff;
+    border-radius: var(--main-radius, 8px);
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,.06));
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.vdp-widget .widget-title {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--theme-color, #2196F3);
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* 文档列表小工具 */
+.vdp-widget-docs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.vdp-widget-doc-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color, #eee);
+}
+.vdp-widget-doc-item:last-child { border-bottom: none; }
+.vdp-widget-doc-thumb { flex-shrink: 0; }
+.vdp-widget-doc-body { flex: 1; min-width: 0; }
+.vdp-widget-doc-title {
+    display: block;
+    color: var(--main-color, #333);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.vdp-widget-doc-title:hover { color: var(--theme-color, #2196F3); }
+.vdp-widget-doc-meta {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--muted-color, #999);
+}
+.vdp-widget-doc-meta span { margin-right: 12px; }
+
+/* 分类导航 */
+.vdp-widget-categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.vdp-widget-categories li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: var(--main-color, #333);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--border-color, #eee);
+}
+.vdp-widget-categories li:last-child a { border-bottom: none; }
+.vdp-widget-categories li a:hover { color: var(--theme-color, #2196F3); }
+.vdp-widget-categories .cat-count {
+    color: var(--muted-color, #999);
+    font-size: 12px;
+}
+
+/* 站点统计 */
+.vdp-widget-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.vdp-stat-row {
+    text-align: center;
+    padding: 12px 8px;
+    background: var(--theme-color-light, #E3F2FD);
+    border-radius: 6px;
+}
+.vdp-stat-num {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--theme-color, #2196F3);
+}
+.vdp-stat-label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted-color, #999);
+    margin-top: 2px;
+}
+
+/* 用户卡片 */
+.vdp-widget-user-card.logged-in {
+    text-align: center;
+    padding: 8px 0;
+}
+.vdp-widget-user-card .vdp-widget-user-avatar img {
+    border-radius: 50%;
+    border: 3px solid var(--theme-color-light, #E3F2FD);
+}
+.vdp-widget-user-card .vdp-widget-user-name {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.vdp-widget-user-vip-info {
+    color: var(--muted-color, #999);
+    font-size: 12px;
+}
+.vdp-widget-user-buy-vip {
+    display: inline-block;
+    margin-top: 4px;
+    color: #f39c12;
+    font-size: 12px;
+    text-decoration: none;
+}
+.vdp-widget-user-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+    border-top: 1px solid var(--border-color, #eee);
+    padding-top: 12px;
+}
+.vdp-widget-user-stats a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--main-color, #333);
+    flex: 1;
+}
+.vdp-widget-user-stats strong { display: block; font-size: 14px; }
+.vdp-widget-user-stats span { font-size: 11px; color: var(--muted-color, #999); }
+.vdp-widget-user-card.guest { text-align: center; padding: 20px 0; }
+.vdp-widget-user-card.guest p { margin: 0 0 12px; color: var(--secondary-color, #555); font-size: 13px; }
+
+/* 会员推广 */
+.vdp-widget-vip-promo {
+    text-align: center;
+    padding: 16px 8px;
+    background: linear-gradient(135deg, #fff8e1, #ffecb3);
+    border-radius: var(--main-radius, 8px);
+}
+.vdp-vip-subtitle { font-size: 14px; color: #856404; margin-bottom: 12px; }
+.vdp-vip-perks { font-size: 13px; color: #856404; line-height: 1.8; margin-bottom: 12px; }
+.vdp-vip-from { font-size: 18px; font-weight: 700; color: #d35400; margin-bottom: 12px; }
+.vdp-vip-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+}
+.vdp-vip-btn:hover { color: #fff; opacity: .9; text-decoration: none; }
+
+.vdp-widget-empty {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted-color, #999);
+    font-size: 13px;
+}
+
+/* ============================================
+   独立会员开通页 /?vdp_page=membership
+   ============================================ */
+.vdp-membership-page { max-width: 1100px; }
+.vdp-membership-disabled {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--main-bg-color);
+    border-radius: var(--main-radius);
+    box-shadow: var(--shadow-sm);
+}
+.vdp-membership-disabled h2 { color: var(--key-color); margin-bottom: 12px; }
+.vdp-membership-disabled p { color: var(--muted-color); margin-bottom: 20px; }
+
+.vdp-membership-hero {
+    text-align: center;
+    padding: 50px 20px 40px;
+    background: linear-gradient(135deg, var(--theme-color) 0%, var(--theme-color-hover) 100%);
+    border-radius: var(--radius-lg);
+    color: #fff;
+    margin-bottom: 30px;
+}
+.vdp-membership-title { font-size: 32px; font-weight: 700; margin: 0 0 12px; color: #fff; }
+.vdp-membership-subtitle { font-size: 16px; opacity: .92; margin: 0; }
+
+.vdp-membership-current {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    background: var(--main-bg-color);
+    border-radius: var(--main-radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 28px;
+}
+.vdp-membership-current-info { flex: 1; }
+.vdp-membership-current-name { font-size: 16px; font-weight: 600; color: var(--key-color); margin-bottom: 4px; }
+.vdp-membership-current-end { font-size: 13px; color: var(--muted-color); }
+.vdp-membership-current-days { color: var(--theme-color); margin-left: 6px; }
+
+.vdp-membership-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.vdp-membership-card {
+    position: relative;
+    background: var(--main-bg-color);
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.vdp-membership-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--theme-color-light);
+}
+.vdp-membership-card.is-recommended {
+    border-color: var(--theme-color);
+    box-shadow: 0 8px 24px rgba(33, 150, 243, .14);
+    transform: translateY(-4px);
+}
+.vdp-membership-card-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--theme-color);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: .5px;
+}
+.vdp-membership-card-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--key-color);
+    margin-bottom: 14px;
+}
+.vdp-membership-card-price {
+    color: var(--theme-color);
+    margin-bottom: 8px;
+    line-height: 1;
+}
+.vdp-membership-card-currency { font-size: 20px; font-weight: 600; vertical-align: top; }
+.vdp-membership-card-amount   { font-size: 44px; font-weight: 700; }
+.vdp-membership-card-decimal  { font-size: 18px; font-weight: 600; }
+.vdp-membership-card-desc {
+    color: var(--muted-color);
+    font-size: 13px;
+    margin-bottom: 22px;
+    min-height: 20px;
+}
+.vdp-membership-card-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: var(--theme-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--main-radius);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s;
+}
+.vdp-membership-card-btn:hover {
+    background: var(--theme-color-hover);
+    color: #fff;
+    text-decoration: none;
+}
+.vdp-membership-card-btn-login {
+    background: var(--muted-bg-color);
+    color: var(--main-color);
+}
+.vdp-membership-card-btn-login:hover {
+    background: var(--theme-color);
+    color: #fff;
+}
+
+.vdp-membership-section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--key-color);
+    text-align: center;
+    margin: 0 0 24px;
+}
+
+.vdp-membership-rights { margin-bottom: 40px; }
+.vdp-membership-rights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.vdp-membership-right-item {
+    background: var(--main-bg-color);
+    border-radius: var(--main-radius);
+    padding: 24px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform .25s;
+}
+.vdp-membership-right-item:hover { transform: translateY(-3px); }
+.vdp-membership-right-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: var(--theme-color-light);
+    color: var(--theme-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+.vdp-membership-right-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--key-color);
+    margin-bottom: 6px;
+}
+.vdp-membership-right-desc { font-size: 12px; color: var(--muted-color); }
+
+.vdp-membership-faq { margin-bottom: 30px; }
+.vdp-membership-faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.vdp-membership-faq-item {
+    background: var(--main-bg-color);
+    border-radius: var(--main-radius);
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-sm);
+}
+.vdp-membership-faq-item summary {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--key-color);
+    list-style: none;
+    position: relative;
+    padding-right: 24px;
+}
+.vdp-membership-faq-item summary::-webkit-details-marker { display: none; }
+.vdp-membership-faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--muted-color);
+    font-size: 18px;
+    transition: transform .2s;
+}
+.vdp-membership-faq-item[open] summary::after { content: '−'; }
+.vdp-membership-faq-item p {
+    margin: 12px 0 0;
+    color: var(--secondary-color);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+    .vdp-membership-cards       { grid-template-columns: repeat(2, 1fr); }
+    .vdp-membership-rights-grid { grid-template-columns: repeat(2, 1fr); }
+    .vdp-membership-card.is-recommended { transform: none; }
+}
+@media (max-width: 600px) {
+    .vdp-membership-hero { padding: 36px 16px 28px; }
+    .vdp-membership-title { font-size: 24px; }
+    .vdp-membership-subtitle { font-size: 14px; }
+    .vdp-membership-cards       { grid-template-columns: 1fr; }
+    .vdp-membership-current     { flex-wrap: wrap; }
+}
+
+/* ============================================
+   用户卡片（新版，参考子比 + 截图样式）
+   ============================================ */
+.vdp-widget.vdp-widget--user-card {
+    padding: 0 !important;
+    overflow: hidden;
+}
+.vdp-widget.vdp-widget--user-card > .vdp-widget-body {
+    padding: 0;
+}
+.vdp-widget.vdp-widget--user-card > .vdp-widget-header {
+    padding: 14px 16px 0;
+    margin: 0;
+}
+.vdp-uc { position: relative; padding-bottom: 18px; }
+.vdp-uc-cover {
+    height: 110px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #e74c3c 100%);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.vdp-uc-cover::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.15));
+}
+.vdp-uc-avatar {
+    width: 78px; height: 78px;
+    margin: -42px auto 10px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.15);
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+}
+.vdp-uc-avatar img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    background: #f0f3f7;
+}
+.vdp-uc-avatar-default {
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+}
+.vdp-uc-avatar-default::before {
+    content: '\f007'; font-family: FontAwesome;
+    width: 100%; height: 100%; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #f0f3f7, #e2e8f0);
+    color: #f39c12; font-size: 38px;
+}
+.vdp-uc-avatar-default i { display: none; }
+
+.vdp-uc-body { text-align: center; padding: 0 16px; }
+.vdp-uc-name {
+    font-size: 16px; font-weight: 600; color: var(--main-color, #333);
+    line-height: 1.4; margin-bottom: 4px;
+}
+.vdp-uc-welcome {
+    font-size: 18px; font-weight: 500;
+    color: #999; margin: 4px 0 18px;
+}
+.vdp-uc-vip-info {
+    margin-top: 4px; font-size: 12px; color: #999;
+}
+.vdp-uc-vip-info .fa { color: #f39c12; }
+.vdp-uc-vip-buy {
+    display: inline-block; margin-top: 6px; font-size: 12px;
+    padding: 3px 12px; border-radius: 12px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    color: #fff; text-decoration: none;
+}
+.vdp-uc-vip-buy:hover { color: #fff; opacity: .9; }
+
+.vdp-uc-stats {
+    display: flex; margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid var(--border-color, #eee);
+}
+.vdp-uc-stats a {
+    flex: 1; text-align: center; color: var(--main-color, #333);
+    text-decoration: none; padding: 4px 0;
+    border-radius: 6px; transition: background .2s;
+}
+.vdp-uc-stats a:hover { background: var(--bg-color-light, #f7f9fc); }
+.vdp-uc-stats strong { display: block; font-size: 15px; font-weight: 600; }
+.vdp-uc-stats span { font-size: 11px; color: var(--muted-color, #999); }
+
+/* 未登录：登录/注册按钮（参考截图：左蓝右橙） */
+.vdp-uc-actions {
+    display: flex; gap: 12px;
+    margin-bottom: 16px;
+}
+.vdp-uc-btn {
+    flex: 1; display: inline-flex; align-items: center; justify-content: center;
+    gap: 6px; height: 42px; border-radius: 6px;
+    font-size: 15px; font-weight: 500; color: #fff;
+    text-decoration: none; transition: all .2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.vdp-uc-btn:hover { color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+.vdp-uc-btn-signin { background: linear-gradient(135deg, #5DADE2, #3498DB); }
+.vdp-uc-btn-signup { background: linear-gradient(135deg, #F5B041, #E67E22); }
+
+/* 分隔条：横线+文字 */
+.vdp-uc-divider {
+    display: flex; align-items: center;
+    color: #aaa; font-size: 12px;
+    margin: 8px 0 12px;
+}
+.vdp-uc-divider::before,
+.vdp-uc-divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, #e5e5e5, transparent);
+}
+.vdp-uc-divider span { padding: 0 12px; }
+
+/* 微信按钮（参考截图：绿色胶囊） */
+.vdp-uc-social {
+    display: flex; flex-direction: column; gap: 8px;
+    align-items: center;
+}
+.vdp-uc-social-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 6px; min-width: 60%;
+    padding: 9px 22px; border-radius: 24px;
+    font-size: 14px; color: #fff; text-decoration: none;
+    transition: all .2s;
+}
+.vdp-uc-social-btn:hover { color: #fff; opacity: .9; transform: translateY(-1px); }
+.vdp-uc-social-weixin { background: #1aad19; box-shadow: 0 2px 8px rgba(26,173,25,.25); }
+.vdp-uc-social-btn .fa { font-size: 16px; }
+
+
+/* 微信未配置时禁用样态：保持可点击但视觉变浅 */
+.vdp-uc-social-disabled { opacity: .55; cursor: help; }
+.vdp-uc-social-disabled:hover { opacity: .7; transform: none; }
